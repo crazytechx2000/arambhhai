@@ -1,0 +1,291 @@
+/*
+  Ported from the provided "ARAMBH — Premium Classic Logo" source.
+  Visual design (shapes, gradients, colors, timing) is unchanged from
+  the original. Two structural adjustments were made to fit this into a
+  reusable React component that can render several times on one page:
+
+  1. Gradient/path/clip IDs are made unique per instance (see the
+     component) since duplicate SVG ids are invalid when the logo
+     appears in the header, footer, and mobile drawer at once.
+
+  2. The floating drift and the pointer-tilt effect are split onto two
+     separate elements. In the original markup both animate `transform`
+     on the same element — a running CSS keyframe animation always wins
+     over a same-property inline style, so the JS-driven tilt would be
+     silently overwritten every animation frame. floatWrapper owns the
+     drift; tiltGroup (JS-driven) owns the tilt. Same fix applied to the
+     previous logo implementation for the same reason.
+*/
+
+.badgeWrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.floatWrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: gentleFloat 6s ease-in-out infinite;
+}
+
+@keyframes gentleFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.tiltGroup {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+  transition: transform 0.25s ease-out, filter 0.4s ease;
+  cursor: pointer;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.logoSvg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* Premium circle */
+
+.circleBody {
+  fill: #06101d;
+  stroke: #0c1b2c;
+  stroke-width: 10;
+  filter: drop-shadow(0 12px 25px rgba(0, 0, 0, 0.7));
+}
+
+.circleInnerBorder {
+  fill: none;
+  stroke-width: 2;
+  opacity: 0.9;
+}
+
+.circleRim {
+  fill: none;
+  stroke-width: 7;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 4px rgba(0, 174, 255, 0.45))
+    drop-shadow(0 0 10px rgba(0, 100, 255, 0.18));
+}
+
+.circleHighlight {
+  fill: none;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-dasharray: 55 890;
+  opacity: 0.9;
+  filter: drop-shadow(0 0 5px #00bfff);
+  animation: borderShine 5s ease-in-out infinite;
+}
+
+@keyframes borderShine {
+  0% {
+    stroke-dashoffset: 0;
+    opacity: 0.2;
+  }
+  35% {
+    opacity: 0.9;
+  }
+  70% {
+    stroke-dashoffset: -945;
+    opacity: 0.55;
+  }
+  100% {
+    stroke-dashoffset: -945;
+    opacity: 0.2;
+  }
+}
+
+/* Inner panel */
+
+.innerPanel {
+  fill: #050d18;
+  stroke: rgba(75, 130, 170, 0.18);
+  stroke-width: 1;
+}
+
+.centerGlow {
+  opacity: 0.28;
+  filter: blur(10px);
+}
+
+/* Letter A */
+
+.aShadow {
+  fill: #00050a;
+  opacity: 0.9;
+  transform: translate(4px, 6px);
+}
+
+.aMetal {
+  stroke-width: 2.5;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 5px 8px rgba(0, 0, 0, 0.75))
+    drop-shadow(0 0 8px rgba(0, 160, 255, 0.16));
+}
+
+.aGlass {
+  opacity: 0.95;
+}
+
+.aLiquid {
+  animation: liquidBreathing 7s ease-in-out infinite;
+}
+
+.aLiquidWave {
+  animation: liquidWave 8s ease-in-out infinite;
+}
+
+.aLiquidWave2 {
+  animation: liquidWaveReverse 10s ease-in-out infinite;
+}
+
+.aLiquidGlow {
+  opacity: 0.38;
+  filter: blur(7px);
+  animation: liquidGlow 5s ease-in-out infinite;
+}
+
+.aLightSweep {
+  opacity: 0;
+  transform: translateX(-150px);
+  animation: aLightSweep 5.5s ease-in-out infinite;
+}
+
+.aLiquidLine {
+  fill: none;
+  stroke: rgba(210, 245, 255, 0.7);
+  stroke-width: 1.2;
+  stroke-linecap: round;
+  stroke-dasharray: 45 220;
+  opacity: 0.65;
+  animation: liquidLine 6s linear infinite;
+}
+
+@keyframes liquidBreathing {
+  0%,
+  100% {
+    transform: translateY(2px) scaleY(0.98);
+  }
+  50% {
+    transform: translateY(-4px) scaleY(1.02);
+  }
+}
+
+@keyframes liquidWave {
+  0% {
+    transform: translateX(-45px) translateY(4px) skewX(-2deg);
+  }
+  25% {
+    transform: translateX(-10px) translateY(-2px) skewX(1deg);
+  }
+  50% {
+    transform: translateX(25px) translateY(3px) skewX(2deg);
+  }
+  75% {
+    transform: translateX(5px) translateY(-3px) skewX(-1deg);
+  }
+  100% {
+    transform: translateX(-45px) translateY(4px) skewX(-2deg);
+  }
+}
+
+@keyframes liquidWaveReverse {
+  0% {
+    transform: translateX(35px) translateY(0);
+  }
+  50% {
+    transform: translateX(-25px) translateY(6px);
+  }
+  100% {
+    transform: translateX(35px) translateY(0);
+  }
+}
+
+@keyframes liquidGlow {
+  0%,
+  100% {
+    opacity: 0.22;
+    transform: scale(0.94);
+  }
+  50% {
+    opacity: 0.48;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes aLightSweep {
+  0% {
+    transform: translateX(-170px) skewX(-12deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  38% {
+    opacity: 0.75;
+  }
+  55% {
+    opacity: 0.18;
+  }
+  72% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(170px) skewX(-12deg);
+    opacity: 0;
+  }
+}
+
+@keyframes liquidLine {
+  0% {
+    stroke-dashoffset: 260;
+  }
+  100% {
+    stroke-dashoffset: -260;
+  }
+}
+
+/* Hover (pointer-fine only — gated in the component) */
+
+.tiltGroup:hover .circleHighlight {
+  animation-duration: 3s;
+}
+
+.tiltGroup:hover .aLightSweep {
+  animation-duration: 3.5s;
+}
+
+.tiltGroup:hover .aLiquidGlow {
+  opacity: 0.55;
+}
+
+/* Wordmark set beside the icon. The provided source imports Cormorant
+   Garamond for a `.brand` text style but the badge markup that would
+   place it inside the seal (an arc of text + diamond separators) wasn't
+   included in what was provided — only the CSS rule, no SVG elements.
+   Rather than invent that arc geometry, the name is set as ordinary text
+   next to the icon, in the same typeface/letter-spacing spirit. */
+.wordmark {
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-weight: 600;
+  color: currentColor;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+}

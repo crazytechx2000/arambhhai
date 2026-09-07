@@ -1,0 +1,27 @@
+# Local environment secrets
+.env*
+!.env.example
+
+# Local agent instructions
+AGENTS.md
+CLAUDE.md
+
+# Next.js build output
+.next/
+out/
+
+# Dependencies
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+*.tsbuildinfo
+
+# Deployment tool metadata
+.vercel/
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
