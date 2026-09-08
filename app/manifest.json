@@ -1,0 +1,16 @@
+{
+  "name": "ArambhHai",
+  "short_name": "ArambhHai",
+  "description": "ArambhHai designs and builds modern, responsive websites for businesses, professionals, schools, and growing brands — customized, not templated.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050508",
+  "theme_color": "#050508",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ]
+}

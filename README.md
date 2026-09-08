@@ -27,26 +27,17 @@ Visit http://localhost:3000.
 | Variable | Description |
 |---|---|
 | `RESEND_API_KEY` | API key from [resend.com](https://resend.com), used to send emails from the contact form. |
-| `RESEND_FROM_EMAIL` | Verified sender address in Resend, for example `ArambhHai <hello@yourdomain.com>`. |
-| `CONTACT_EMAIL` | The inbox that should receive new project enquiries. |
+| `CONTACT_TO_EMAIL` | The inbox that should receive new project enquiries. |
 
 Without these set, the site still builds and runs — the contact form will
 return a friendly error when submitted until they're configured.
 
-**Resend setup without a domain:** use `ArambhHai <onboarding@resend.dev>` as
-`RESEND_FROM_EMAIL` for testing. Set `CONTACT_EMAIL` to the official ArambhHai
-inbox. Resend's sandbox sender has recipient restrictions, so the customer
-confirmation may only work for the email address verified in your Resend
-account. A verified custom domain is required before sending to arbitrary
-customer addresses in production.
-
 Keep `RESEND_API_KEY` server-side in `.env.local` or your hosting provider's
 environment settings; never expose it in client code.
 
-Gmail addresses such as `arambhhaiofficial@gmail.com` can receive mail, but
-cannot be used as the Resend sender unless Resend verifies that domain. The
-sender must be an address such as `hello@arambhhai.com` after that domain's DNS
-records are verified in Resend.
+The verified production sender is `ArambhHai <team@arambhhai.me>`. The Gmail
+address is used only as the internal receiving inbox through
+`CONTACT_TO_EMAIL`.
 
 ## Before you launch — placeholders to replace
 

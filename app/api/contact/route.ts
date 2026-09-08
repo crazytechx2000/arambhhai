@@ -50,10 +50,8 @@ export async function POST(request: Request) {
       return NextResponse.json({ ok: true });
     }
 
-    await Promise.all([
-      sendEnquiryNotification(parsed.data),
-      sendCustomerConfirmation(parsed.data),
-    ]);
+    await sendEnquiryNotification(parsed.data);
+    await sendCustomerConfirmation(parsed.data);
 
     return NextResponse.json({ ok: true });
   } catch (error) {

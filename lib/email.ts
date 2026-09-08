@@ -1,6 +1,8 @@
 import { Resend } from "resend";
 import type { ContactFormValues } from "./validation";
 
+const FROM_ADDRESS = "ArambhHai <team@arambhhai.me>";
+
 // Instantiated lazily so a missing key doesn't crash the build —
 // it only surfaces when the API route actually tries to send.
 function getResendClient() {
@@ -9,14 +11,6 @@ function getResendClient() {
     throw new Error("RESEND_API_KEY is not configured");
   }
   return new Resend(apiKey);
-}
-
-function getFromAddress() {
-  const from = process.env.RESEND_FROM_EMAIL;
-  if (!from) {
-    throw new Error("RESEND_FROM_EMAIL is not configured");
-  }
-  return from;
 }
 
 async function sendEmail(
@@ -43,10 +37,9 @@ function escapeHtml(value: string) {
  */
 export async function sendEnquiryNotification(data: ContactFormValues) {
   const resend = getResendClient();
-  const from = getFromAddress();
-  const to = process.env.CONTACT_EMAIL;
+  const to = process.env.CONTACT_TO_EMAIL;
   if (!to) {
-    throw new Error("CONTACT_EMAIL is not configured");
+    throw new Error("CONTACT_TO_EMAIL is not configured");
   }
 
   const submittedAt = new Date().toLocaleString("en-IN", {
@@ -75,13 +68,13 @@ export async function sendEnquiryNotification(data: ContactFormValues) {
     .join("");
 
   await sendEmail(resend, {
-    from,
+    from: FROM_ADDRESS,
     to,
     replyTo: data.email,
-    subject: `New enquiry from ${data.name} — ${data.service}`,
+    subject: "New Enquiry – ArambhHai",
     html: `
       <div style="font-family:sans-serif;max-width:560px;margin:0 auto;">
-        <h2 style="color:#0072ff;">New project enquiry</h2>
+        <h2 style="color:#0072ff;">New Enquiry – ArambhHai</h2>
         <table style="border-collapse:collapse;width:100%;">${rowsHtml}</table>
         <p style="margin-top:16px;color:#5b6270;font-weight:600;">Message</p>
         <p style="white-space:pre-wrap;">${escapeHtml(data.message)}</p>
@@ -95,25 +88,25 @@ export async function sendEnquiryNotification(data: ContactFormValues) {
  */
 export async function sendCustomerConfirmation(data: ContactFormValues) {
   const resend = getResendClient();
-  const from = getFromAddress();
 
   await sendEmail(resend, {
-    from,
+    from: FROM_ADDRESS,
     to: data.email,
-    subject: "We've received your enquiry — ArambhHai",
+    subject: "Thank you for contacting ArambhHai",
     html: `
       <div style="font-family:sans-serif;max-width:560px;margin:0 auto;">
         <h2 style="color:#0072ff;">Thanks for connecting with ArambhHai</h2>
         <p>Hi ${escapeHtml(data.name)},</p>
         <p>
-          We've received your enquiry about a <strong>${escapeHtml(
-            data.service
-          )}</strong> and will get back to you shortly with next steps.
+          We've received your enquiry about a <strong>${escapeHtml(data.service)}
+          </strong>. Our team is reviewing your message and will follow up with
+          next steps.
         </p>
         <p style="color:#5b6270;">
           In the meantime, if you'd like to share anything else about your
           project, just reply directly to this email.
         </p>
+        <p><a href="https://www.arambhhai.me">www.arambhhai.me</a></p>
         <p style="margin-top:24px;">— The ArambhHai Team</p>
       </div>
     `,

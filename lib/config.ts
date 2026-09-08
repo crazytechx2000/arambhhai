@@ -3,8 +3,8 @@ export const siteConfig = {
   tagline: "A strong start for your website.",
   description:
     "ArambhHai designs and builds modern, responsive websites for businesses, professionals, schools, and growing brands — customized, not templated.",
-  url: "https://arambhhai.example.com", // replace with the production domain
-  email: "arambhhaiofficial@gmail.com",
+  url: "https://www.arambhhai.me",
+  email: "team@arambhhai.me",
   phone: "", // optional, replace if a public phone number is available
 
   // Replace with the live Fiverr profile URL once it is ready.
