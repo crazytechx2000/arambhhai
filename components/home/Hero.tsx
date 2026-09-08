@@ -40,7 +40,7 @@ export function Hero() {
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Button href="/contact" size="lg" className="sm:w-auto w-full">
-              Start a Project
+              Bring Your Idea to Life
             </Button>
             <Button
               href="/#work"

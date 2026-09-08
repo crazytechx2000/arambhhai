@@ -1,4 +1,3 @@
-import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { FadeIn } from "@/components/ui/FadeIn";
@@ -30,13 +29,6 @@ export function Services() {
                   <p className="text-[14.5px] leading-relaxed text-text-muted">
                     {service.description}
                   </p>
-                  <span className="mt-auto flex items-center gap-1 pt-2 text-[13.5px] font-medium text-brand-primary">
-                    Learn more
-                    <ArrowRight
-                      size={14}
-                      className="transition-transform group-hover:translate-x-0.5"
-                    />
-                  </span>
                 </div>
               </FadeIn>
             );

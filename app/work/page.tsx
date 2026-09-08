@@ -85,7 +85,7 @@ export default function WorkPage() {
             Want a website like one of these, built for you?
           </h2>
           <Button href="/contact" size="lg">
-            Start a Project <ArrowRight size={18} />
+            Bring Your Idea to Life <ArrowRight size={18} />
           </Button>
         </div>
       </Container>

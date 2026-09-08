@@ -24,7 +24,7 @@ export function FinalCta() {
 
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             <Button href="/contact" size="lg" className="w-full sm:w-auto">
-              Start a Project
+              Bring Your Idea to Life
             </Button>
             <Button
               href={siteConfig.fiverrUrl}

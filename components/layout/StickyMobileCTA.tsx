@@ -36,7 +36,7 @@ export function StickyMobileCTA() {
       }}
     >
       <Button href="/contact" size="lg" className="w-full">
-        Start a Project
+        Bring Your Idea to Life
       </Button>
     </div>
   );

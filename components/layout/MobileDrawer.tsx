@@ -64,7 +64,7 @@ export function MobileDrawer({
 
       <div className="px-6 pb-8 pt-4">
         <Button href="/contact" size="lg" className="w-full" onClick={onClose}>
-          Start a Project
+          Bring Your Idea to Life
         </Button>
       </div>
     </div>
