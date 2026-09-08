@@ -1,4 +1,7 @@
+"use client";
+
 import { ArrowRight } from "lucide-react";
+import { useRef, useState } from "react";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Badge } from "@/components/ui/Badge";
@@ -8,6 +11,39 @@ import { projects } from "@/lib/data/projects";
 import Image from "next/image";
 
 export function Showcase() {
+  const projectsScrollerRef = useRef<HTMLDivElement>(null);
+  const [activeProject, setActiveProject] = useState(0);
+
+  function updateActiveProject() {
+    const scroller = projectsScrollerRef.current;
+    if (!scroller) return;
+
+    const cards = Array.from(
+      scroller.querySelectorAll<HTMLElement>("[data-project-card]")
+    );
+    const scrollPosition = scroller.scrollLeft + 20;
+    const nextActiveProject = cards.reduce(
+      (closestIndex, card, cardIndex) =>
+        Math.abs(card.offsetLeft - scrollPosition) <
+        Math.abs(cards[closestIndex].offsetLeft - scrollPosition)
+          ? cardIndex
+          : closestIndex,
+      0
+    );
+    setActiveProject(nextActiveProject);
+  }
+
+  function scrollToProject(projectIndex: number) {
+    const scroller = projectsScrollerRef.current;
+    const card = scroller?.querySelectorAll<HTMLElement>("[data-project-card]")[
+      projectIndex
+    ];
+    if (!scroller || !card) return;
+
+    scroller.scrollTo({ left: card.offsetLeft - 20, behavior: "smooth" });
+    setActiveProject(projectIndex);
+  }
+
   return (
     <section id="work" className="scroll-mt-20 bg-background py-16 sm:py-24">
       <Container>
@@ -24,14 +60,18 @@ export function Showcase() {
         </FadeIn>
 
         {/* Mobile: horizontal snap-scroll. Desktop: grid. */}
-        <div className="mt-8 -mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-2 sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 lg:grid-cols-3">
+        <div
+          ref={projectsScrollerRef}
+          onScroll={updateActiveProject}
+          className="mt-8 -mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-2 [scrollbar-width:none] sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 lg:grid-cols-3"
+        >
           {projects.map((project, i) => (
             <FadeIn
               key={project.id}
               delay={Math.min(i, 3) * 0.05}
-              className="min-w-[62%] shrink-0 snap-start sm:min-w-0 sm:shrink"
+              className="w-64 min-w-64 shrink-0 snap-start sm:w-auto sm:min-w-0 sm:shrink"
             >
-              <div className="flex h-full flex-col">
+              <div data-project-card="true" className="flex h-full flex-col">
                 <div className="overflow-hidden rounded-[var(--radius-lg)] border border-border bg-surface shadow-[0_20px_60px_-24px_rgba(15,17,23,0.25)]">
                   <div className="flex items-center gap-1.5 border-b border-border bg-[#f4f5f7] px-4 py-3">
                     <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
@@ -84,6 +124,22 @@ export function Showcase() {
                 )}
               </div>
             </FadeIn>
+          ))}
+        </div>
+        <div className="mt-5 flex justify-center gap-2 sm:hidden" aria-label="Project slides">
+          {projects.map((project, projectIndex) => (
+            <button
+              key={project.id}
+              type="button"
+              aria-label={`View ${project.title}`}
+              aria-current={activeProject === projectIndex ? "true" : undefined}
+              onClick={() => scrollToProject(projectIndex)}
+              className={`h-2 rounded-full transition-all ${
+                activeProject === projectIndex
+                  ? "w-6 bg-brand-primary"
+                  : "w-2 bg-border"
+              }`}
+            />
           ))}
         </div>
       </Container>
