@@ -38,7 +38,7 @@ export function Showcase() {
                     <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" />
                     <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
                   </div>
-                  <div className="relative aspect-[4/3] sm:aspect-[16/11]">
+                  <div className="relative aspect-[16/9] sm:aspect-[16/11]">
                     {project.image ? (
                       <Image
                         src={project.image}
