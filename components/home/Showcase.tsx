@@ -29,7 +29,7 @@ export function Showcase() {
             <FadeIn
               key={project.id}
               delay={Math.min(i, 3) * 0.05}
-              className="min-w-[85%] shrink-0 snap-start sm:min-w-0 sm:shrink"
+              className="min-w-[72%] shrink-0 snap-start sm:min-w-0 sm:shrink"
             >
               <div className="flex h-full flex-col">
                 <div className="overflow-hidden rounded-[var(--radius-lg)] border border-border bg-surface shadow-[0_20px_60px_-24px_rgba(15,17,23,0.25)]">

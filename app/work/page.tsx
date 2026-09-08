@@ -25,7 +25,7 @@ export default function WorkPage() {
 
         <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (
-            <div key={project.id} className="flex h-full flex-col">
+            <div key={project.id} className="mx-auto flex h-full w-full max-w-[22rem] flex-col sm:mx-0 sm:max-w-none">
               <div className="overflow-hidden rounded-[var(--radius-lg)] border border-border bg-surface shadow-[0_20px_60px_-24px_rgba(15,17,23,0.25)]">
                 <div className="flex items-center gap-1.5 border-b border-border bg-[#f4f5f7] px-4 py-3">
                   <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
