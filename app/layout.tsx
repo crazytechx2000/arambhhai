@@ -30,6 +30,11 @@ export const metadata: Metadata = {
     "website redesign",
   ],
   authors: [{ name: siteConfig.name }],
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
   alternates: {
     canonical: "/",
   },

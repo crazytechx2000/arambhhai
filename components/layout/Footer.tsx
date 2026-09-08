@@ -20,13 +20,13 @@ export function Footer() {
       }
     >
       <Container className="py-12 sm:py-16">
-        <div className="flex flex-col items-center gap-8 text-center">
-          <div className="flex flex-col items-center gap-3">
+        <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-3 sm:items-start">
             <div className="flex items-center gap-2 text-sm font-semibold text-white">
               <Mail size={16} className={isDark ? "text-brand-primary-light" : "text-brand-primary"} />
               Connect
             </div>
-            <div className="flex flex-col items-center gap-2">
+            <div className="flex flex-col items-start gap-2">
               <a
                 href={`mailto:${siteConfig.email}`}
                 className="flex items-center gap-2 text-sm transition-colors hover:text-brand-primary"
@@ -47,11 +47,11 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="flex w-full flex-col items-center gap-4 text-xs sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex w-full flex-col gap-4 border-t border-border pt-6 text-xs sm:flex-row sm:items-center sm:justify-between">
             <p className={isDark ? "text-text-on-dark-muted" : "text-text-muted"}>
               © {year} ArambhHai. All rights reserved.
             </p>
-            <div className="flex gap-6">
+            <div className="flex flex-wrap gap-x-6 gap-y-2">
               <Link
                 href="/privacy"
                 className={`transition-colors hover:text-brand-primary ${isDark ? "text-text-on-dark-muted" : "text-text-muted"}`}

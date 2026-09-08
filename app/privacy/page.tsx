@@ -14,26 +14,25 @@ export default function PrivacyPage() {
         <h1 className="text-[28px] font-bold text-text sm:text-[34px]">
           Privacy Policy
         </h1>
-        <p className="mt-4 text-[14px] font-medium text-brand-primary">
-          Placeholder content — replace with ArambhHai&apos;s actual privacy policy
-          before launch.
-        </p>
         <div className="mt-6 space-y-4 text-[15px] leading-relaxed text-text-muted">
           <p>
-            This page will describe what information {siteConfig.name}{" "}
-            collects through the contact form (name, email, phone, and
-            project details), how it is used to respond to enquiries, and
-            how long it is retained.
+            {siteConfig.name} collects the information you submit through the
+            contact form, including your name, email address, phone number,
+            selected service, optional budget and timeline, and project
+            message.
           </p>
           <p>
-            It will also cover: whether any third-party services (such as
-            the email provider used to send notifications) process this
-            data, cookie usage if analytics are added later, and how
-            visitors can request their information be deleted.
+            We use these details to review and respond to your enquiry. The
+            form is processed through Resend to send the enquiry to our team
+            and to send a confirmation to the email address you provide.
           </p>
           <p>
-            Contact {siteConfig.email} with any privacy-related questions in
-            the meantime.
+            Enquiry details are not stored in a database by this website. Do
+            not submit passwords, payment details, or other sensitive
+            information through the form.
+          </p>
+          <p>
+            For privacy questions about an enquiry, contact {siteConfig.email}.
           </p>
         </div>
       </Container>

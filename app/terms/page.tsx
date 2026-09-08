@@ -14,19 +14,23 @@ export default function TermsPage() {
         <h1 className="text-[28px] font-bold text-text sm:text-[34px]">
           Terms of Service
         </h1>
-        <p className="mt-4 text-[14px] font-medium text-brand-primary">
-          Placeholder content — replace with ArambhHai&apos;s actual terms before
-          launch.
-        </p>
         <div className="mt-6 space-y-4 text-[15px] leading-relaxed text-text-muted">
           <p>
-            This page will outline the terms for engaging {siteConfig.name}{" "}
-            for website design and development work: project scope,
-            revisions, payment terms, timelines, and intellectual property
-            ownership once a project is completed and paid for.
+            {siteConfig.name} provides website design and development services
+            for businesses, professionals, schools, and growing brands. An
+            enquiry submitted through this website is a request to discuss a
+            project, not a binding contract.
           </p>
           <p>
-            Contact {siteConfig.email} with any questions in the meantime.
+            Project scope, deliverables, revisions, timelines, fees, payment
+            terms, and ownership arrangements will be agreed directly before
+            work begins. The final agreement for a project takes priority over
+            this general information.
+          </p>
+          <p>
+            Please provide accurate contact and project information. Contact
+            {" "}{siteConfig.email} if you have questions about an enquiry or
+            prospective project.
           </p>
         </div>
       </Container>
