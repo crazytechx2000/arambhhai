@@ -13,11 +13,13 @@ export const SERVICE_OPTIONS = [
 ] as const;
 
 export const BUDGET_OPTIONS = [
+  "Under ₹1,000",
+  "₹1,000 – ₹2,500",
+  "₹2,500 – ₹5,000",
+  "₹5,000 – ₹10,000",
+  "₹10,000 – ₹20,000",
+  "₹20,000+",
   "Not sure yet",
-  "Under ₹15,000",
-  "₹15,000 – ₹40,000",
-  "₹40,000 – ₹1,00,000",
-  "Above ₹1,00,000",
 ] as const;
 
 export const TIMELINE_OPTIONS = [

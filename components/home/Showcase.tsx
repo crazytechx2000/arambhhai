@@ -77,14 +77,14 @@ export function Showcase() {
                     <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" />
                     <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
                   </div>
-                  <div className="relative aspect-[16/9] sm:aspect-[16/11]">
+                  <div className="relative aspect-[16/9] bg-[#f4f6f7] sm:aspect-[16/11]">
                     {project.image ? (
                       <Image
                         src={project.image}
                         alt={project.title}
                         fill
-                        quality={90}
-                        className="object-cover"
+                        quality={100}
+                        className="object-contain p-1.5"
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       />
                     ) : (
