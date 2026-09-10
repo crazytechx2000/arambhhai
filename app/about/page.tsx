@@ -104,7 +104,7 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="mt-12">
+          <div className="mt-12 flex flex-col items-center text-center">
             <Button href="/contact" variant="accent" size="lg">
               Let&apos;s Get Started <ArrowRight size={18} />
             </Button>

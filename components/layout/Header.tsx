@@ -117,12 +117,14 @@ export function Header() {
               type="button"
               onClick={() => setDrawerOpen(true)}
               aria-label="Open menu"
+              aria-expanded={drawerOpen}
               className={cn(
-                "flex h-11 w-11 items-center justify-center rounded-md transition-colors",
+                "flex h-11 w-11 items-center justify-center rounded-md border transition-colors",
+                isDark ? "border-border-dark" : "border-border",
                 isDark ? "text-white" : "text-text"
               )}
             >
-              <Menu size={26} />
+              <Menu size={23} strokeWidth={2.25} />
             </button>
           </div>
         </Container>

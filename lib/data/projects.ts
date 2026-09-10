@@ -15,11 +15,11 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: "concept-studio-portfolio",
-    title: "Studio Portfolio",
+    title: "Adarsh Shukla Portfolio",
     category: "Personal Portfolio",
     description:
       "A minimal portfolio concept for an independent designer, built around large project imagery.",
-    image: "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=1200&q=90",
+    image: "https://res.cloudinary.com/usxchg35/image/upload/v1789054580/Screenshot_2026-09-10_201754.png",
     liveUrl: "https://adarshshukla0001.vercel.app/",
     isConcept: true,
   },
@@ -29,7 +29,7 @@ export const projects: Project[] = [
     category: "Business",
     description:
       "A concept business site for a consulting firm, focused on credibility and a clear enquiry path.",
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=90",
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1600&q=95",
     liveUrl: "",
     isConcept: true,
   },
@@ -39,7 +39,7 @@ export const projects: Project[] = [
     category: "Education",
     description:
       "A concept promotional site for a school — admissions info, programs, and campus updates.",
-    image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1200&q=90",
+    image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1600&q=95",
     liveUrl: "",
     isConcept: true,
   },
@@ -49,7 +49,7 @@ export const projects: Project[] = [
     category: "Landing Page",
     description:
       "A focused single-page concept built to convert traffic from a single marketing campaign.",
-    image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1200&q=90",
+    image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1600&q=95",
     liveUrl: "",
     isConcept: true,
   },
@@ -59,7 +59,7 @@ export const projects: Project[] = [
     category: "Small Business",
     description:
       "A concept site for a local café — menu, hours, and location front and center.",
-    image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=90",
+    image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1600&q=95",
     liveUrl: "",
     isConcept: true,
   },

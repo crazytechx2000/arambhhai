@@ -22,6 +22,7 @@ export function StickyMobileCTA() {
 
   if (
     pathname === "/" ||
+    pathname.startsWith("/about") ||
     pathname.startsWith("/work") ||
     pathname === "/contact"
   ) {
