@@ -56,26 +56,23 @@ export default function WorkPage() {
                   {project.description}
                 </p>
               </div>
-              <div className="mt-3 flex flex-wrap items-center gap-2">
-                <Badge tone="brand">{project.category}</Badge>
-                {project.isConcept && <Badge>Concept Project</Badge>}
-              </div>
-              {project.tech && (
-                <p className="mt-2 text-[13px] text-text-muted">{project.tech}</p>
-              )}
-              {project.link && (
-                <div className="mt-3">
+              <div className="mt-3 flex flex-nowrap items-center justify-between gap-2">
+                <Badge tone="brand" className="shrink-0">
+                  {project.category}
+                </Badge>
+                {project.liveUrl && (
                   <Button
-                    href={project.link}
+                    href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     variant="secondary"
-                    className="w-full"
+                    size="md"
+                    className="ml-auto h-8 min-h-8 shrink-0 px-2.5 text-[12px]"
                   >
-                    View Project <ExternalLink size={16} />
+                    Live Site <ExternalLink size={14} />
                   </Button>
-                </div>
-              )}
+                )}
+              </div>
             </div>
           ))}
         </div>
@@ -84,8 +81,8 @@ export default function WorkPage() {
           <h2 className="text-[22px] font-bold text-text sm:text-[26px]">
             Want a website like one of these, built for you?
           </h2>
-          <Button href="/contact" size="lg">
-            Bring Your Idea to Life <ArrowRight size={18} />
+          <Button href="/contact" variant="accent" size="lg">
+            Let&apos;s Get Started <ArrowRight size={18} />
           </Button>
         </div>
       </Container>

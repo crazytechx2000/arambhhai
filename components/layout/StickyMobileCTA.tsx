@@ -35,8 +35,8 @@ export function StickyMobileCTA() {
         backgroundColor: isDark ? "rgba(11,15,25,0.95)" : "rgba(255,255,255,0.95)",
       }}
     >
-      <Button href="/contact" size="lg" className="w-full">
-        Bring Your Idea to Life
+      <Button href="/contact" variant="accent" size="lg" className="w-full">
+        Let&apos;s Get Started
       </Button>
     </div>
   );

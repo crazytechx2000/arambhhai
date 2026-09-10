@@ -39,8 +39,8 @@ export function Hero() {
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Button href="/contact" size="lg" className="sm:w-auto w-full">
-              Bring Your Idea to Life
+            <Button href="/contact" variant="accent" size="lg" className="sm:w-auto w-full">
+              Let&apos;s Get Started
             </Button>
             <Button
               href="/#work"

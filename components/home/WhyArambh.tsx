@@ -6,6 +6,7 @@ import {
 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { FadeIn } from "@/components/ui/FadeIn";
+import { Button } from "@/components/ui/Button";
 
 const reasons = [
   {
@@ -40,12 +41,14 @@ export function WhyArambh() {
               A strong beginning, done properly.
             </h2>
             <p className="mt-4 text-[16px] leading-relaxed text-text-muted sm:text-[17px]">
-              ArambhHai is a web development studio built around one idea:
-              every website deserves a proper start. We design and build
-              sites that are clear, responsive, and shaped around the
-              people who&apos;ll actually use them — for businesses,
-              professionals, schools, and growing brands alike.
+              ArambhHai helps businesses, professionals, and growing brands
+              build a simple, modern, and effective online presence. We focus
+              on clean design, responsive websites, and practical solutions
+              that are easy to use.
             </p>
+            <Button href="/about" variant="secondary" className="mt-5 w-fit">
+              Learn More
+            </Button>
           </FadeIn>
 
           <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">

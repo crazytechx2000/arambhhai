@@ -23,8 +23,8 @@ export function FinalCta() {
           </p>
 
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-            <Button href="/contact" size="lg" className="w-full sm:w-auto">
-              Bring Your Idea to Life
+            <Button href="/contact" variant="accent" size="lg" className="w-full sm:w-auto">
+              Let&apos;s Get Started
             </Button>
             <Button
               href={siteConfig.fiverrUrl}

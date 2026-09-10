@@ -63,8 +63,8 @@ export function MobileDrawer({
       </nav>
 
       <div className="px-6 pb-8 pt-4">
-        <Button href="/contact" size="lg" className="w-full" onClick={onClose}>
-          Bring Your Idea to Life
+        <Button href="/contact" variant="accent" size="lg" className="w-full" onClick={onClose}>
+          Let&apos;s Get Started
         </Button>
       </div>
     </div>

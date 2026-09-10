@@ -1,7 +1,7 @@
 "use client";
 
-import { ArrowRight } from "lucide-react";
 import { useRef, useState } from "react";
+import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Badge } from "@/components/ui/Badge";
@@ -9,6 +9,8 @@ import { FadeIn } from "@/components/ui/FadeIn";
 import { Button } from "@/components/ui/Button";
 import { projects } from "@/lib/data/projects";
 import Image from "next/image";
+
+const featuredProjects = projects.slice(0, 3);
 
 export function Showcase() {
   const projectsScrollerRef = useRef<HTMLDivElement>(null);
@@ -65,7 +67,7 @@ export function Showcase() {
           onScroll={updateActiveProject}
           className="mt-8 -mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-2 [scrollbar-width:none] sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 lg:grid-cols-3"
         >
-          {projects.map((project, i) => (
+          {featuredProjects.map((project, i) => (
             <FadeIn
               key={project.id}
               delay={Math.min(i, 3) * 0.05}
@@ -106,28 +108,13 @@ export function Showcase() {
                 </div>
                 <div className="mt-3 flex flex-wrap items-center gap-2">
                   <Badge tone="brand">{project.category}</Badge>
-                  {project.isConcept && <Badge>Concept Project</Badge>}
                 </div>
-                {project.link ? (
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-3 flex items-center gap-1 text-[13.5px] font-medium text-brand-primary"
-                  >
-                    View Project <ArrowRight size={14} />
-                  </a>
-                ) : (
-                  <button className="mt-3 flex items-center gap-1 text-[13.5px] font-medium text-brand-primary">
-                    View Project <ArrowRight size={14} />
-                  </button>
-                )}
               </div>
             </FadeIn>
           ))}
         </div>
         <div className="mt-5 flex justify-center gap-2 sm:hidden" aria-label="Project slides">
-          {projects.map((project, projectIndex) => (
+          {featuredProjects.map((project, projectIndex) => (
             <button
               key={project.id}
               type="button"
@@ -141,6 +128,11 @@ export function Showcase() {
               }`}
             />
           ))}
+        </div>
+        <div className="mt-6 flex justify-center">
+          <Button href="/work" variant="secondary">
+            View More Projects <ArrowRight size={16} />
+          </Button>
         </div>
       </Container>
     </section>

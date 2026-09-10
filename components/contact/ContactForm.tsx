@@ -121,7 +121,7 @@ export function ContactForm() {
             type="email"
             inputMode="email"
             autoComplete="email"
-            placeholder="you@example.com"
+            placeholder="your email address"
             className={inputClasses}
             {...register("email")}
           />
@@ -222,7 +222,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="w-full h-14 rounded-[var(--radius-md)] bg-brand-primary px-8 text-[17px] font-bold text-white shadow-[0_8px_24px_-8px_rgba(0,114,255,0.45)] transition-all duration-200 hover:shadow-[0_14px_32px_-10px_rgba(0,114,255,0.55)] hover:brightness-110 active:scale-[0.98] disabled:opacity-60 disabled:pointer-events-none"
+        className="w-full h-14 rounded-[var(--radius-md)] bg-emerald-700 px-8 text-[17px] font-bold text-white shadow-[0_8px_24px_-8px_rgba(4,120,87,0.35)] transition-all duration-200 hover:bg-emerald-600 hover:shadow-[0_14px_32px_-10px_rgba(4,120,87,0.45)] active:scale-[0.98] disabled:opacity-60 disabled:pointer-events-none"
       >
         {status === "loading" ? (
           <span className="inline-flex items-center gap-2">

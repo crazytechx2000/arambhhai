@@ -5,7 +5,7 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { useTheme } from "@/app/theme-provider";
 
-type Variant = "primary" | "secondary" | "ghost";
+type Variant = "primary" | "accent" | "secondary" | "ghost";
 type Size = "md" | "lg";
 
 const base =
@@ -14,6 +14,8 @@ const base =
 const variants: Record<Variant, string> = {
   primary:
     "bg-brand-primary text-white shadow-[0_8px_24px_-8px_rgba(0,114,255,0.45)] hover:shadow-[0_14px_32px_-10px_rgba(0,114,255,0.55)] hover:brightness-110",
+  accent:
+    "bg-emerald-700 text-white shadow-[0_8px_24px_-8px_rgba(4,120,87,0.35)] hover:bg-emerald-600 hover:shadow-[0_14px_32px_-10px_rgba(4,120,87,0.45)]",
   secondary:
     "border border-border text-text shadow-[0_1px_2px_rgba(0,0,0,0.04)] hover:border-brand-primary/30 hover:bg-brand-primary/[0.04]",
   ghost: "text-brand-primary hover:bg-brand-primary/5",
@@ -22,6 +24,8 @@ const variants: Record<Variant, string> = {
 const variantsOnDark: Record<Variant, string> = {
   primary:
     "bg-brand-primary text-white shadow-[0_8px_20px_-8px_rgba(0,114,255,0.45)] hover:shadow-[0_12px_28px_-10px_rgba(0,114,255,0.55)] hover:brightness-110",
+  accent:
+    "bg-emerald-600 text-white shadow-[0_8px_20px_-8px_rgba(4,120,87,0.35)] hover:bg-emerald-500 hover:shadow-[0_12px_28px_-10px_rgba(4,120,87,0.45)]",
   secondary:
     "border border-border-dark text-white shadow-[0_1px_2px_rgba(0,0,0,0.25)] hover:border-white/20 hover:bg-white/[0.06]",
   ghost: "text-brand-primary-light hover:bg-white/[0.06]",

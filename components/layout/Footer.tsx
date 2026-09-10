@@ -19,14 +19,18 @@ export function Footer() {
           : "border-t border-border bg-surface text-text-muted"
       }
     >
-      <Container className="py-12 sm:py-16">
-        <div className="flex flex-col gap-8">
-          <div className="flex flex-col gap-3 sm:items-start">
-            <div className="flex items-center gap-2 text-sm font-semibold text-white">
+      <Container className="py-8 sm:py-10">
+        <div className="flex flex-col items-center gap-5 text-center sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:text-left">
+          <p className={`text-xs ${isDark ? "text-text-on-dark-muted" : "text-text-muted"}`}>
+            © {year} ArambhHai. All rights reserved.
+          </p>
+
+          <div className="flex flex-col items-center gap-2">
+            <div className={`flex items-center gap-2 text-sm font-semibold ${isDark ? "text-white" : "text-text"}`}>
               <Mail size={16} className={isDark ? "text-brand-primary-light" : "text-brand-primary"} />
               Connect
             </div>
-            <div className="flex flex-col items-start gap-2">
+            <div className="flex flex-col items-center gap-1">
               <a
                 href={`mailto:${siteConfig.email}`}
                 className="flex items-center gap-2 text-sm transition-colors hover:text-brand-primary"
@@ -47,24 +51,19 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="flex w-full flex-col gap-4 border-t border-border pt-6 text-xs sm:flex-row sm:items-center sm:justify-between">
-            <p className={isDark ? "text-text-on-dark-muted" : "text-text-muted"}>
-              © {year} ArambhHai. All rights reserved.
-            </p>
-            <div className="flex flex-wrap gap-x-6 gap-y-2">
-              <Link
-                href="/privacy"
-                className={`transition-colors hover:text-brand-primary ${isDark ? "text-text-on-dark-muted" : "text-text-muted"}`}
-              >
-                Privacy Policy
-              </Link>
-              <Link
-                href="/terms"
-                className={`transition-colors hover:text-brand-primary ${isDark ? "text-text-on-dark-muted" : "text-text-muted"}`}
-              >
-                Terms
-              </Link>
-            </div>
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs sm:justify-end">
+            <Link
+              href="/privacy"
+              className={`transition-colors hover:text-brand-primary ${isDark ? "text-text-on-dark-muted" : "text-text-muted"}`}
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              href="/terms"
+              className={`transition-colors hover:text-brand-primary ${isDark ? "text-text-on-dark-muted" : "text-text-muted"}`}
+            >
+              Terms
+            </Link>
           </div>
         </div>
       </Container>

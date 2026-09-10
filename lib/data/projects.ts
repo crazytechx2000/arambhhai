@@ -1,10 +1,10 @@
 export interface Project {
   id: string;
   title: string;
-  category: "Portfolio" | "Business" | "Education" | "Landing Page" | "Small Business";
+  category: "Personal Portfolio" | "Business" | "Education" | "Landing Page" | "Small Business";
   description: string;
   image?: string;
-  link?: string;
+  liveUrl?: string;
   tech?: string;
   isConcept: boolean; // true = demo/concept project, not a paid client engagement
 }
@@ -16,12 +16,11 @@ export const projects: Project[] = [
   {
     id: "concept-studio-portfolio",
     title: "Studio Portfolio",
-    category: "Portfolio",
+    category: "Personal Portfolio",
     description:
       "A minimal portfolio concept for an independent designer, built around large project imagery.",
     image: "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=1200&q=90",
-    link: "https://example.com/studio-portfolio",
-    tech: "Next.js, Tailwind CSS",
+    liveUrl: "https://adarshshukla0001.vercel.app/",
     isConcept: true,
   },
   {
@@ -31,8 +30,7 @@ export const projects: Project[] = [
     description:
       "A concept business site for a consulting firm, focused on credibility and a clear enquiry path.",
     image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=90",
-    link: "https://example.com/northview-consulting",
-    tech: "Next.js, Tailwind CSS",
+    liveUrl: "",
     isConcept: true,
   },
   {
@@ -42,8 +40,7 @@ export const projects: Project[] = [
     description:
       "A concept promotional site for a school — admissions info, programs, and campus updates.",
     image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1200&q=90",
-    link: "https://example.com/greenfield-school",
-    tech: "Next.js, Tailwind CSS",
+    liveUrl: "",
     isConcept: true,
   },
   {
@@ -53,8 +50,7 @@ export const projects: Project[] = [
     description:
       "A focused single-page concept built to convert traffic from a single marketing campaign.",
     image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1200&q=90",
-    link: "https://example.com/product-launch",
-    tech: "Next.js, Tailwind CSS",
+    liveUrl: "",
     isConcept: true,
   },
   {
@@ -64,8 +60,7 @@ export const projects: Project[] = [
     description:
       "A concept site for a local café — menu, hours, and location front and center.",
     image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=90",
-    link: "https://example.com/corner-cafe",
-    tech: "Next.js, Tailwind CSS",
+    liveUrl: "",
     isConcept: true,
   },
 ];
