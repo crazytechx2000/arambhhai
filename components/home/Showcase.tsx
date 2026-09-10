@@ -50,14 +50,11 @@ export function Showcase() {
     <section id="work" className="scroll-mt-20 bg-background py-16 sm:py-24">
       <Container>
         <FadeIn>
-          <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+          <div>
             <SectionHeading
               title="A look at our work"
               description="A mix of client and concept projects, each built with the same mobile-first process."
             />
-            <Button href="/contact" variant="secondary" className="hidden sm:inline-flex">
-              Get a Quote
-            </Button>
           </div>
         </FadeIn>
 
