@@ -20,7 +20,11 @@ export function StickyMobileCTA() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  if (pathname === "/" || pathname === "/work" || pathname === "/contact") {
+  if (
+    pathname === "/" ||
+    pathname.startsWith("/work") ||
+    pathname === "/contact"
+  ) {
     return null;
   }
 
