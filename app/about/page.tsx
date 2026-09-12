@@ -23,9 +23,9 @@ const approachPoints = [
 const pricing = [
   ["Website", "Starting from ₹799"],
   ["Additional pages", "₹199 per page"],
-  ["Deployment", "₹199 total"],
+  ["Deployment services", "Only ₹199"],
   ["Testing preview", "Free temporary testing subdomain"],
-  ["Custom domain", "Actual domain cost + ₹199 setup/service"],
+  ["Custom domain", "Only the domain provider's charge"],
 ];
 
 export default function AboutPage() {

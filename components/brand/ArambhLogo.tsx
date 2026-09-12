@@ -15,13 +15,13 @@ type LogoSize = "sm" | "md" | "lg";
 
 const SIZE_MAP: Record<LogoSize, number> = {
   sm: 44, // mobile drawer
-  md: 64, // header
+  md: 56, // header
   lg: 176, // footer, on a dark surface
 };
 
 const WORDMARK_SIZE: Record<LogoSize, string> = {
   sm: "15px",
-  md: "21px",
+  md: "19px",
   lg: "34px",
 };
 

@@ -25,7 +25,7 @@ export function Hero() {
           <div className="flex items-center gap-3">
             <span className="h-px w-8 bg-brand-primary/70" />
             <span className="text-[12px] font-semibold uppercase tracking-[0.2em] text-brand-primary">
-              ArambhHai — Web Development Studio
+              ArambhHai — Web Studio
             </span>
           </div>
 

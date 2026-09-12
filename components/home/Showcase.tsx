@@ -12,7 +12,7 @@ import Image from "next/image";
 
 const featuredProjects = [...projects]
   .sort((first, second) => Number(Boolean(second.liveUrl)) - Number(Boolean(first.liveUrl)))
-  .slice(0, 4);
+  .slice(0, 3);
 
 export function Showcase() {
   const projectsScrollerRef = useRef<HTMLDivElement>(null);
@@ -72,7 +72,7 @@ export function Showcase() {
               delay={Math.min(i, 3) * 0.05}
               className="w-[calc(100vw-2.5rem)] min-w-[calc(100vw-2.5rem)] shrink-0 snap-center sm:w-auto sm:min-w-0 sm:snap-start sm:shrink"
             >
-              <div data-project-card="true" className="flex h-full flex-col">
+              <div data-project-card="true" className="flex h-full min-w-0 flex-col">
                 <div className="overflow-hidden rounded-[var(--radius-lg)] border border-border bg-surface shadow-[0_20px_60px_-24px_rgba(15,17,23,0.25)]">
                   <div className="flex items-center gap-1.5 border-b border-border bg-[#f4f5f7] px-4 py-3">
                     <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
@@ -107,16 +107,16 @@ export function Showcase() {
                   </div>
                 </div>
                 <div className="mt-3 flex flex-nowrap items-center justify-between gap-2">
-                  <Badge tone="brand" className="shrink-0">{project.category}</Badge>
+                  <Badge tone="brand" className="max-w-[58%] shrink-0 truncate">{project.category}</Badge>
                   {project.liveUrl && (
                     <Button
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       variant="secondary"
-                      className="ml-auto h-8 min-h-8 shrink-0 px-2.5 text-[12px]"
+                      className="ml-auto h-8 min-h-8 shrink-0 px-2 text-[12px]"
                     >
-                      Live Site <ExternalLink size={14} />
+                      Live <ExternalLink size={13} />
                     </Button>
                   )}
                 </div>

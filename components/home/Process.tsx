@@ -10,7 +10,7 @@ export function Process() {
         <FadeIn>
           <SectionHeading
             title="A clear path from idea to launch"
-            description="A simple, visible process that keeps your project moving with confidence."
+            description="A simple, visible process that keeps your project clear from first conversation to final launch."
           />
         </FadeIn>
 

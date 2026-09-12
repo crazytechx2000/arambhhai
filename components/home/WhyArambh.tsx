@@ -29,6 +29,16 @@ const reasons = [
     title: "Clear communication",
     description: "Honest timelines and simple project updates — no jargon.",
   },
+  {
+    icon: Gauge,
+    title: "Affordable by design",
+    description: "Clear starting prices and practical scope without unnecessary extras.",
+  },
+  {
+    icon: Smartphone,
+    title: "Free testing preview",
+    description: "Review the website on a temporary preview before final deployment.",
+  },
 ];
 
 export function WhyArambh() {
@@ -38,7 +48,7 @@ export function WhyArambh() {
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
           <FadeIn>
             <h2 className="text-[26px] font-bold leading-[1.2] tracking-tight text-text sm:text-[32px] md:text-[38px]">
-              A strong beginning, done properly.
+              Why ArambhHai
             </h2>
             <p className="mt-4 text-[16px] leading-relaxed text-text-muted sm:text-[17px]">
               ArambhHai helps businesses, professionals, and growing brands
