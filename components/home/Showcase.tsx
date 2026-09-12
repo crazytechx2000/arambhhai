@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Badge } from "@/components/ui/Badge";
@@ -10,7 +10,9 @@ import { Button } from "@/components/ui/Button";
 import { projects } from "@/lib/data/projects";
 import Image from "next/image";
 
-const featuredProjects = projects.slice(0, 3);
+const featuredProjects = [...projects]
+  .sort((first, second) => Number(Boolean(second.liveUrl)) - Number(Boolean(first.liveUrl)))
+  .slice(0, 4);
 
 export function Showcase() {
   const projectsScrollerRef = useRef<HTMLDivElement>(null);
@@ -62,13 +64,13 @@ export function Showcase() {
         <div
           ref={projectsScrollerRef}
           onScroll={updateActiveProject}
-          className="mt-8 -mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-2 [scrollbar-width:none] sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 lg:grid-cols-3"
+          className="mt-8 -mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-2 [scrollbar-width:none] sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 md:grid-cols-4"
         >
           {featuredProjects.map((project, i) => (
             <FadeIn
               key={project.id}
               delay={Math.min(i, 3) * 0.05}
-              className="w-64 min-w-64 shrink-0 snap-start sm:w-auto sm:min-w-0 sm:shrink"
+              className="w-[calc(100vw-2.5rem)] min-w-[calc(100vw-2.5rem)] shrink-0 snap-center sm:w-auto sm:min-w-0 sm:snap-start sm:shrink"
             >
               <div data-project-card="true" className="flex h-full flex-col">
                 <div className="overflow-hidden rounded-[var(--radius-lg)] border border-border bg-surface shadow-[0_20px_60px_-24px_rgba(15,17,23,0.25)]">
@@ -104,8 +106,19 @@ export function Showcase() {
                     </p>
                   </div>
                 </div>
-                <div className="mt-3 flex flex-wrap items-center gap-2">
-                  <Badge tone="brand">{project.category}</Badge>
+                <div className="mt-3 flex flex-nowrap items-center justify-between gap-2">
+                  <Badge tone="brand" className="shrink-0">{project.category}</Badge>
+                  {project.liveUrl && (
+                    <Button
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      variant="secondary"
+                      className="ml-auto h-8 min-h-8 shrink-0 px-2.5 text-[12px]"
+                    >
+                      Live Site <ExternalLink size={14} />
+                    </Button>
+                  )}
                 </div>
               </div>
             </FadeIn>

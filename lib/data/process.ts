@@ -7,13 +7,13 @@ export interface ProcessStep {
 export const processSteps: ProcessStep[] = [
   {
     step: "01",
-    title: "Discuss",
+    title: "Discover",
     description:
-      "We understand your business, goals, and what the website needs to achieve.",
+      "We understand your business, audience, goals, and what the website needs to achieve.",
   },
   {
     step: "02",
-    title: "Plan",
+    title: "Research & Plan",
     description:
       "We define the structure, pages, content, and overall visual direction.",
   },

@@ -9,8 +9,8 @@ export function Process() {
       <Container>
         <FadeIn>
           <SectionHeading
-            title="How a project runs, start to finish"
-            description="Five steps, each one visible to you before we move to the next."
+            title="A clear path from idea to launch"
+            description="A simple, visible process that keeps your project moving with confidence."
           />
         </FadeIn>
 

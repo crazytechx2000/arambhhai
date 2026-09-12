@@ -2,6 +2,7 @@ import { Hero } from "@/components/home/Hero";
 import { TrustStrip } from "@/components/home/TrustStrip";
 import { Services } from "@/components/home/Services";
 import { WhyArambh } from "@/components/home/WhyArambh";
+import { AffordablePresence } from "@/components/home/AffordablePresence";
 import { Showcase } from "@/components/home/Showcase";
 import { Process } from "@/components/home/Process";
 import { WhoWeBuildFor } from "@/components/home/WhoWeBuildFor";
@@ -15,6 +16,7 @@ export default function Home() {
       <TrustStrip />
       <Services />
       <WhyArambh />
+      <AffordablePresence />
       <Showcase />
       <Process />
       <WhoWeBuildFor />
